@@ -1,7 +1,7 @@
-package dev.utsiye.blog_service.application.usecases;
+package dev.utsiye.blog_service.application.usecases.auth;
 
-import dev.utsiye.blog_service.application.dto.LoginRequestDTO;
-import dev.utsiye.blog_service.application.dto.LoginResponseDTO;
+import dev.utsiye.blog_service.application.dto.Login.LoginRequestDTO;
+import dev.utsiye.blog_service.application.dto.Login.LoginResponseDTO;
 import dev.utsiye.blog_service.domain.entities.User;
 import dev.utsiye.blog_service.domain.exceptions.InvalidCredentialsException;
 import dev.utsiye.blog_service.domain.exceptions.UserNotFoundException;

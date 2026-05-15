@@ -26,6 +26,7 @@ public class GlobalExceptionHandler {
     private static final Map<Class<? extends BaseException>, HttpStatus> EXCEPTION_STATUS_MAP = Map.of(
         dev.utsiye.blog_service.domain.exceptions.UserNotFoundException.class,   HttpStatus.NOT_FOUND,
         dev.utsiye.blog_service.domain.exceptions.UserAlreadyExistsException.class, HttpStatus.CONFLICT,
+        dev.utsiye.blog_service.domain.exceptions.CategoryAlreadyExistsException.class, HttpStatus.CONFLICT,
         dev.utsiye.blog_service.domain.exceptions.InvalidCredentialsException.class, HttpStatus.UNAUTHORIZED
     );
 

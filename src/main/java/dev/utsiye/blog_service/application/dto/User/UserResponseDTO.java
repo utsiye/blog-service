@@ -1,4 +1,4 @@
-package dev.utsiye.blog_service.application.dto;
+package dev.utsiye.blog_service.application.dto.User;
 
 public record UserResponseDTO (
     Long id,

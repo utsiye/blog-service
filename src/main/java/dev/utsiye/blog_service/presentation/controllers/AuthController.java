@@ -1,11 +1,11 @@
 package dev.utsiye.blog_service.presentation.controllers;
 
-import dev.utsiye.blog_service.application.dto.UserResponseDTO;
-import dev.utsiye.blog_service.application.dto.UserRequestDTO;
-import dev.utsiye.blog_service.application.usecases.RegisterUserUseCase;
-import dev.utsiye.blog_service.application.usecases.LoginUserUseCase;
-import dev.utsiye.blog_service.application.dto.LoginRequestDTO;
-import dev.utsiye.blog_service.application.dto.LoginResponseDTO;
+import dev.utsiye.blog_service.application.dto.Login.LoginRequestDTO;
+import dev.utsiye.blog_service.application.dto.Login.LoginResponseDTO;
+import dev.utsiye.blog_service.application.dto.User.UserRequestDTO;
+import dev.utsiye.blog_service.application.dto.User.UserResponseDTO;
+import dev.utsiye.blog_service.application.usecases.auth.LoginUserUseCase;
+import dev.utsiye.blog_service.application.usecases.auth.RegisterUserUseCase;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

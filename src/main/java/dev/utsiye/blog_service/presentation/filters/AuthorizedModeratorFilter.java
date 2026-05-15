@@ -17,8 +17,8 @@ import java.util.Optional;
 
 @Component
 public class AuthorizedModeratorFilter extends BaseAuthorizedFilter {
-    private static final List<String> ALLOWED_PATHS = List.of(
-        "/api/auth/**"  // TODO
+    private static final List<PathMethod> ALLOWED_PATHS = List.of(
+    new PathMethod("/categories/", "POST")
     );
     private final UserRepository userRepo;
 
@@ -41,7 +41,7 @@ public class AuthorizedModeratorFilter extends BaseAuthorizedFilter {
     }
 
     @Override
-    protected List<String> getAllowedPaths() {
+    protected List<PathMethod> getAllowedPaths() {
         return ALLOWED_PATHS;
     }
 }

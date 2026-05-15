@@ -17,12 +17,13 @@ Class to validate JWT token. Base logic contains out of validation, if token is 
 
 
 public abstract class BaseAuthorizedFilter extends OncePerRequestFilter {
-
+    
+    protected record PathMethod(String path, String method) {}
     private static final String HEADER_NAME = "Authorization";
     private static final AntPathMatcher PATH_MATCHER = new AntPathMatcher();
     protected final JWTTokenProvider jwtProvider;
 
-    protected abstract List<String> getAllowedPaths();
+    protected abstract List<PathMethod> getAllowedPaths();
 
     protected BaseAuthorizedFilter(JWTTokenProvider jwtProvider) {
         this.jwtProvider = jwtProvider;
@@ -31,10 +32,12 @@ public abstract class BaseAuthorizedFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String uri = request.getRequestURI();
+        String method = request.getMethod();
 
         // No match in allowed paths => no filtration
         return getAllowedPaths().stream()
-                .noneMatch(pattern -> PATH_MATCHER.match(pattern, uri));
+            .noneMatch(pm -> PATH_MATCHER.match(pm.path(), uri) 
+                          && pm.method().equalsIgnoreCase(method));
     }
 
     @Override

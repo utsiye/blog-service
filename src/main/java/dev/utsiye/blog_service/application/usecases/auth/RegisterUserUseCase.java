@@ -1,12 +1,12 @@
-package dev.utsiye.blog_service.application.usecases;
+package dev.utsiye.blog_service.application.usecases.auth;
 
 import dev.utsiye.blog_service.domain.entities.User;
 import dev.utsiye.blog_service.domain.repositories.UserRepository;
 import dev.utsiye.blog_service.domain.enums.UserRole;
 import dev.utsiye.blog_service.domain.exceptions.UserAlreadyExistsException;
+import dev.utsiye.blog_service.application.dto.User.UserRequestDTO;
+import dev.utsiye.blog_service.application.dto.User.UserResponseDTO;
 import dev.utsiye.blog_service.application.services.PasswordHasher;
-import dev.utsiye.blog_service.application.dto.UserResponseDTO;
-import dev.utsiye.blog_service.application.dto.UserRequestDTO;
 
 import org.springframework.stereotype.Service;
 
