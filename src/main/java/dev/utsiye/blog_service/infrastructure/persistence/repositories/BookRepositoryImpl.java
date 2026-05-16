@@ -8,7 +8,6 @@ import java.util.Optional;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
 public class BookRepositoryImpl implements BookRepository {
     private final BookJpaRepository jpaRepository;
@@ -32,9 +31,21 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public List<Book> findByAuthor(String author) {
+    public List<Book> findByAuthor(String author, int offset, int limit) {
         return jpaRepository.findByAuthorAndIsDeletedFalse(author)
                 .stream()
+                .skip(offset)
+                .limit(limit)
+                .map(this::toDomain)
+                .toList();
+    }
+
+    @Override
+    public List<Book> findByCategoryId(Long categoryId, int offset, int limit) {
+        return jpaRepository.findByCategoryIdAndIsDeletedFalse(categoryId)
+                .stream()
+                .skip(offset)
+                .limit(limit)
                 .map(this::toDomain)
                 .toList();
     }

@@ -4,8 +4,4 @@ public class CategoryAlreadyExistsException extends BaseException {
     public CategoryAlreadyExistsException() {
         super("Category already exists");
     }
-
-    public CategoryAlreadyExistsException(Throwable cause) {
-        super("Category already exists", cause);
-    }
 }

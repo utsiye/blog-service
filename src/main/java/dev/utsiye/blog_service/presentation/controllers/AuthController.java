@@ -4,8 +4,8 @@ import dev.utsiye.blog_service.application.dto.Login.LoginRequestDTO;
 import dev.utsiye.blog_service.application.dto.Login.LoginResponseDTO;
 import dev.utsiye.blog_service.application.dto.User.UserRequestDTO;
 import dev.utsiye.blog_service.application.dto.User.UserResponseDTO;
-import dev.utsiye.blog_service.application.usecases.auth.LoginUserUseCase;
-import dev.utsiye.blog_service.application.usecases.auth.RegisterUserUseCase;
+import dev.utsiye.blog_service.application.interactors.auth.LoginUserInteractor;
+import dev.utsiye.blog_service.application.interactors.auth.RegisterUserInteractor;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/user")
 public class AuthController {
-    private final RegisterUserUseCase registerUserUseCase;
-    private final LoginUserUseCase loginUserUseCase;
+    private final RegisterUserInteractor registerUserUseCase;
+    private final LoginUserInteractor loginUserUseCase;
     
-    public AuthController(RegisterUserUseCase registerUserUseCase, LoginUserUseCase loginUserUseCase){
+    public AuthController(RegisterUserInteractor registerUserUseCase, LoginUserInteractor loginUserUseCase){
         this.registerUserUseCase = registerUserUseCase;
         this.loginUserUseCase = loginUserUseCase;
     }

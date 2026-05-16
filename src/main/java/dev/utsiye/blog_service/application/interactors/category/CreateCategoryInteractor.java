@@ -1,4 +1,4 @@
-package dev.utsiye.blog_service.application.usecases.categories;
+package dev.utsiye.blog_service.application.interactors.category;
 
 import dev.utsiye.blog_service.application.dto.Category.CategoryCreationRequestDTO;
 import dev.utsiye.blog_service.application.dto.Category.CategoryDTO;
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class CreateCategoryUseCase {
+public class CreateCategoryInteractor {
     private final CategoryRepository categoryRepo;
 
-    public CreateCategoryUseCase(CategoryRepository categoryRepo) {
+    public CreateCategoryInteractor(CategoryRepository categoryRepo) {
         this.categoryRepo = categoryRepo;
     }
 

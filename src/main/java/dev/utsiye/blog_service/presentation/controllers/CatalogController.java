@@ -4,19 +4,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-import dev.utsiye.blog_service.application.usecases.categories.ListCategoriesUseCase;
 import dev.utsiye.blog_service.application.dto.Category.CategoryDTO;
+import dev.utsiye.blog_service.application.interactors.category.CreateCategoryInteractor;
+import dev.utsiye.blog_service.application.interactors.category.ListCategoriesInteractor;
 import dev.utsiye.blog_service.application.dto.Category.CategoryCreationRequestDTO;
-import dev.utsiye.blog_service.application.usecases.categories.CreateCategoryUseCase;
 
 
 @RestController
 @RequestMapping("/categories")
 public class CatalogController {
-    private final ListCategoriesUseCase listCategoriesUseCase;
-    private final CreateCategoryUseCase createCategoryUseCase;
+    private final ListCategoriesInteractor listCategoriesUseCase;
+    private final CreateCategoryInteractor createCategoryUseCase;
     
-    public CatalogController(ListCategoriesUseCase listCategoriesUseCase, CreateCategoryUseCase createCategoryUseCase){
+    public CatalogController(ListCategoriesInteractor listCategoriesUseCase, CreateCategoryInteractor createCategoryUseCase){
         this.listCategoriesUseCase = listCategoriesUseCase;
         this.createCategoryUseCase = createCategoryUseCase;
     }

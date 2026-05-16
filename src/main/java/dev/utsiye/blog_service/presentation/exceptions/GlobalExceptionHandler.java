@@ -27,7 +27,8 @@ public class GlobalExceptionHandler {
         dev.utsiye.blog_service.domain.exceptions.UserNotFoundException.class,   HttpStatus.NOT_FOUND,
         dev.utsiye.blog_service.domain.exceptions.UserAlreadyExistsException.class, HttpStatus.CONFLICT,
         dev.utsiye.blog_service.domain.exceptions.CategoryAlreadyExistsException.class, HttpStatus.CONFLICT,
-        dev.utsiye.blog_service.domain.exceptions.InvalidCredentialsException.class, HttpStatus.UNAUTHORIZED
+        dev.utsiye.blog_service.domain.exceptions.InvalidCredentialsException.class, HttpStatus.UNAUTHORIZED,
+        dev.utsiye.blog_service.domain.exceptions.BookNotFoundException.class, HttpStatus.NOT_FOUND
     );
 
     @ExceptionHandler(BaseException.class)

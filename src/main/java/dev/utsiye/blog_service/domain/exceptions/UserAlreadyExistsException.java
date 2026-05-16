@@ -5,8 +5,4 @@ public class UserAlreadyExistsException extends BaseException{
     public UserAlreadyExistsException(){
         super(message);
     }
-
-    public UserAlreadyExistsException(Throwable cause) {
-        super(message, cause);
-    }
 }

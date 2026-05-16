@@ -1,4 +1,4 @@
-package dev.utsiye.blog_service.application.usecases.auth;
+package dev.utsiye.blog_service.application.interactors.auth;
 
 import dev.utsiye.blog_service.domain.entities.User;
 import dev.utsiye.blog_service.domain.repositories.UserRepository;
@@ -12,11 +12,11 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class RegisterUserUseCase {
+public class RegisterUserInteractor {
     private final UserRepository userRepo;
     private final PasswordHasher passwordHasher;
 
-    public RegisterUserUseCase(UserRepository userRepo, PasswordHasher passwordHasher){
+    public RegisterUserInteractor(UserRepository userRepo, PasswordHasher passwordHasher){
         this.userRepo = userRepo;
         this.passwordHasher = passwordHasher;
     }

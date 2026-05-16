@@ -5,8 +5,4 @@ public class UserNotFoundException extends BaseException{
     public UserNotFoundException(){
         super(message);
     }
-
-    public UserNotFoundException(Throwable cause) {
-        super(message, cause);
-    }
 }

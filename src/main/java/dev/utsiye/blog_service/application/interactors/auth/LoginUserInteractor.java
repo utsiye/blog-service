@@ -1,4 +1,4 @@
-package dev.utsiye.blog_service.application.usecases.auth;
+package dev.utsiye.blog_service.application.interactors.auth;
 
 import dev.utsiye.blog_service.application.dto.Login.LoginRequestDTO;
 import dev.utsiye.blog_service.application.dto.Login.LoginResponseDTO;
@@ -12,13 +12,13 @@ import dev.utsiye.blog_service.application.services.PasswordHasher;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LoginUserUseCase {
+public class LoginUserInteractor {
 
     private final UserRepository userRepository;
     private final PasswordHasher passwordHasher;
     private final JWTTokenProvider jwtTokenProvider;
 
-    public LoginUserUseCase(UserRepository userRepository, PasswordHasher passwordHasher, JWTTokenProvider jwtTokenProvider) {
+    public LoginUserInteractor(UserRepository userRepository, PasswordHasher passwordHasher, JWTTokenProvider jwtTokenProvider) {
         this.userRepository = userRepository;
         this.passwordHasher = passwordHasher;
         this.jwtTokenProvider = jwtTokenProvider;
