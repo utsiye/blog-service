@@ -18,7 +18,10 @@ import java.util.Optional;
 @Component
 public class AuthorizedModeratorFilter extends BaseAuthorizedFilter {
     private static final List<PathMethod> ALLOWED_PATHS = List.of(
-    new PathMethod("/categories/", "POST")
+    new PathMethod("/categories/", "POST"),
+    new PathMethod("/books/", "POST"),
+    new PathMethod("/books/**", "PUT"),
+    new PathMethod("/books/**", "DELETE")
     );
     private final UserRepository userRepo;
 

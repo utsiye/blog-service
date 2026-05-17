@@ -11,7 +11,9 @@ import java.util.List;
 public class AuthorizedUserFilter extends BaseAuthorizedFilter {
 
     private static final List<PathMethod> ALLOWED_PATHS = List.of(
-        new PathMethod("/categories/", "GET")
+        new PathMethod("/categories/", "GET"),
+        new PathMethod("/books/", "GET"),
+        new PathMethod("/books/**", "GET")
     );
 
     public AuthorizedUserFilter(JWTTokenProvider jwtProvider) {
